@@ -14,13 +14,13 @@ module ClientManager
   def self.send_to_all(data)
     puts data
     @clients.each do |c|
-      c.send_text(data)
+      c.body.send(data, 0)
     end
   end
 end
 
 class Client
-  attr_accessor 
+  attr_accessor :body
 
   def initialize(c)
     @body = c
@@ -33,10 +33,6 @@ class Client
         ClientManager.send_to_all(data)
       end
     end
-  end
-
-  def send_text(data)
-    @body.send(data, 0)
   end
 end
 

@@ -13,7 +13,7 @@ module Server
 end
 
 gtk = Gtk::Builder.new
-gtk.add_from_file('r.glade')
+gtk.add_from_file('client.glade')
 gtk['window1'].signal_connect('destroy') { Gtk.main_quit }
 gtk['window2'].signal_connect('destroy') { Gtk.main_quit }
 gtk['window2'].visible = true
